@@ -7,7 +7,8 @@ gerar os números aleatórios com base em algum tipo de entropia.
 No início, achei a ideia super legal, mas me empolguei e me perdi um pouco no raciocínio! 
 Aí, percebi que, na verdade, em primeiro momento não precisava gerar números aleatórios mais rápido, 
 mas sim de ser mais eficiente, no meu caso, um array garantido de números não repetidos. Então,
-acho que o certo é começando por um array de 1 a 60, no exemplo. 
+acho que o certo é começando por um array de 1 a 60, no exemplo. Ainda,  se quiser 6 números aleatórios,
+basta embaralhar os 6 primeiros elementos do array com a troca de índices.*/
 
 /*É uma solução simples, a complexidade tá mais em entender o algoritmo de embaralhamento, essencialmente
 a própria computação e como o interpretador lida com os elementos do array.
@@ -27,6 +28,7 @@ function gerarNumerosNaoAleatorios(numero) {
 
   const inicio = performance.now();
 
+  //Aqui, dentro de um espaço de 6 números, você embaralha os 60 usando a troca de índices.
   for (let i = numero - 1; i >= 0; i--) {
     const j = Math.floor(Math.random() * 60);
     [numeros[i], numeros[j]] = [numeros[j], numeros[i]];
