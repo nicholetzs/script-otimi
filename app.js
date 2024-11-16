@@ -7,7 +7,7 @@ gerar os números aleatórios com base em algum tipo de entropia.
 No início, achei a ideia super legal, mas me empolguei e me perdi um pouco no raciocínio! 
 Aí, percebi que, na verdade, em primeiro momento não precisava gerar números aleatórios mais rápido, 
 mas sim de ser mais eficiente, no meu caso, um array garantido de números não repetidos. Então,
-acho que o certo é começando por um array de 1 a 60, no exemplo. Ainda,  se quiser 6 números aleatórios,
+acho que o certo é começando por um array de 1 a 60, no exemplo. Ainda, se quiser 6 números aleatórios,
 basta embaralhar os 6 primeiros elementos do array com a troca de índices.*/
 
 /*É uma solução simples, a complexidade tá mais em entender o algoritmo de embaralhamento, essencialmente
