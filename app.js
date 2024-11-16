@@ -7,20 +7,15 @@ gerar os números aleatórios com base em algum tipo de entropia.
 No início, achei a ideia super legal, mas me empolguei e me perdi um pouco no raciocínio! 
 Aí, percebi que, na verdade, em primeiro momento não precisava gerar números aleatórios mais rápido, 
 mas sim de ser mais eficiente, no meu caso, um array garantido de números não repetidos. Então,
-acho que o certo é começando por um array de 1 a 60, no exemplo.
+acho que o certo é começando por um array de 1 a 60, no exemplo. E para ser mais eficiente, se você quiser
+6 números aleatórios, basta embaralhar os 6 primeiros elementos do array.*/
 
-Agora o math.random vai gerar um número aleatório entre 0 e 1 e multiplicar pelo tamanho do array. 
-Nesse processo do algoritmo Fisher-Yates, há a troca de elementos no array com base nos índices 
-gerados aleatoriamente pelo Math.random() (que acredito não ter solução sem algum tipo de aleatoriedade
-para o algoritmo se basear), e não diretamente nos valores dos números. 
-Acho que isso reduz o tempo de execução porque o interpretador já tem acesso direto aos endereços 
-de memória de cada elemento e não precisa buscar por valores diretamente.*/
-
-/*É uma solução simples, mas acho que resolve um pouco o problema de eficiência.
+/*É uma solução simples, a complexidade tá mais em entender o algoritmo de embaralhamento, essencialmente
+a própria computação e como o interpretador lida com os elementos do array.
 Nunca me aprofundei muito em qualquer complexidade de algoritmos porque não tive interesse mesmo, mas 
 gostei desse problema.*/
 
-function gerarNumerosNaoAleatorios() {
+function gerarNumerosNaoAleatorios(numero) {
   // Array com os números de 1 a 60 já sem repetição.
   var numeros = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
@@ -31,7 +26,8 @@ function gerarNumerosNaoAleatorios() {
 
   const inicio = performance.now();
 
-  for (let i = numeros.length - 1; i > 0; i--) {
+  //Quer 6 numeros aleatorios? Então só embaralhar os 6 primeiros elementos do array.
+  for (let i = numero - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [numeros[i], numeros[j]] = [numeros[j], numeros[i]];
   }
