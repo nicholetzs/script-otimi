@@ -29,6 +29,7 @@ function gerarNumerosNaoAleatorios(numero) {
   const inicio = performance.now();
 
   //Aqui, dentro de um espaço de 6 números, você embaralha os 60 usando a troca de índices.
+  //Afeta só os 6 primeiros números do array, mas no intervalo de 0 a 59.
   for (let i = numero - 1; i >= 0; i--) {
     const j = Math.floor(Math.random() * 60);
     [numeros[i], numeros[j]] = [numeros[j], numeros[i]];
