@@ -27,8 +27,8 @@ function gerarNumerosNaoAleatorios(numero) {
 
   const inicio = performance.now();
 
-  for (let i = numero - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (59 + 1));
+  for (let i = numero - 1; i >= 0; i--) {
+    const j = Math.floor(Math.random() * numeros.length);
     [numeros[i], numeros[j]] = [numeros[j], numeros[i]];
   }
   // Finaliza o cronômetro
