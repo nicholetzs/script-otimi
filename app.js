@@ -16,7 +16,7 @@ gostei desse problema.*/
 
 /*Não sei se a solução é essa, mas tá aqui a minha*/
 
-function gerarNumerosNaoAleatorios() {
+function gerarNumerosNaoAleatorios(numero) {
   // Array com os números de 1 a 60 já sem repetição.
   var numeros = [
     1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
@@ -27,8 +27,8 @@ function gerarNumerosNaoAleatorios() {
 
   const inicio = performance.now();
 
-  for (let i = numeros.length() - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
+  for (let i = numero - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (59 + 1));
     [numeros[i], numeros[j]] = [numeros[j], numeros[i]];
   }
   // Finaliza o cronômetro
